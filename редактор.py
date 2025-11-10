@@ -76,7 +76,7 @@ def run_file():
     # Мы добавляем полный блок try-except
     try:
         # 'r' означает режим чтения (read)
-        with open("Проекты/ДУРА ТУПАЯ/основа.txt", 'r', encoding='utf-8') as file:
+        with open(current_file_path, 'r', encoding='utf-8') as file:
             # Метод .read() считывает ВСЁ содержимое файла в одну строку
             содержимое_файла = file.read()
 
@@ -104,7 +104,10 @@ def run_file():
 
 # --- Создание основного окна ---
 def start():
+    global root, text_area
     root = tk.Tk()
+    text_area = tk.Text(root, wrap="word", font=("Consolas", 12))
+
     root.title("Простой Редактор - Новый файл")
     root.geometry("800x600")
 
@@ -133,3 +136,4 @@ def start():
 
     # Запуск основного цикла Tkinter
     root.mainloop()
+

@@ -19,6 +19,10 @@ def handle_noviy(arguments):
     print(f"Проект создан {full_path}!")
 
 def handle_otkryt(arguments):
+    full_path = os.path.join(parent_folder, ' '.join(arguments))
+    редактор.start()
+    print(f"Открыли проект {full_path}!")
+
     редактор.start()
     print(f"Открыли проект {full_path}!")
 

@@ -1,13 +1,20 @@
 #include <string>
 #include <iostream>
 #include "h/bazovye.h"
+#include <vector>
+#include <sstream>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-int tokenize() {
-    std::cout << "We tokenize it\n";
-    std::string command;
-    std::cin >> command;
-    std::cout << command;
+int tokenize(const std::string& command) {
+    std::stringstream ss(command);
+    std::string token;
+    std::vector<std::string> tokens;
 
+    while (ss >> token) {
+        tokens.push_back(token);
+    }
+    for (const std::string& element : tokens) {
+        std::cout << element << "\n";
+    }
+    std::cout << std::endl;
     return 0;
 }
